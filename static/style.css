@@ -4,12 +4,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Montserrat', Arial, sans-serif;
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   overflow-x: hidden;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
@@ -64,7 +65,7 @@ html, body {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #fff; 
+  color: #fff;
   transition: 0.3s;
   font-size: 15px;
 }
@@ -86,7 +87,7 @@ html, body {
 }
 
 section#inicio {
-  background-image: url("img/fundo1.jpg");
+  background-image: url("img/Foto\ plano\ de\ fundo\ def.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -99,51 +100,52 @@ section#inicio {
   justify-content: center;
 }
 
-section#inicio h2{
-    font-size: 6rem;
+section#inicio h2 {
+  font-size: 6rem;
 }
 
 section#inicio span#subtitle {
-    margin-right: 8rem;
-    font-size: 1.5rem;
+  margin-right: 8rem;
+  font-size: 1.5rem;
 }
 
 .text-shadow {
-    text-shadow: 4px 4px 10px #000000;
+  text-shadow: 4px 4px 10px #000000;
 }
 
 section#inicio div#arraste a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 section#inicio div#arraste {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    z-index: 9999;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 section#inicio div#arraste:hover {
-    background-color: #1e1e2f;
+  background-color: #1e1e2f;
 }
 
 section#inicio div#arraste i {
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
 }
 
+/* Menu para telas inferiores a 14 pol */
 i.menu-mobile {
   position: fixed;
-  color: #fff;
-  background-color: transparent; 
+  color: #034296;
+  background-color: transparent;
   right: 1rem;
   top: 1rem;
   font-size: 1.5rem;
@@ -159,35 +161,39 @@ i.menu-mobile {
 }
 
 i.menu-mobile:hover {
-  background-color: #1e1e2f; 
+  background-color: #1e1e2f;
 }
 
 .menu-nav-active {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.menu-nav-active #header{
-    left: 0;
+.menu-nav-active #header {
+  left: 0;
 }
 
 @media (max-width: 1024px) {
 
-    #header {
-      left: -300px;
-    }
-    i.menu-mobile{
-      display: flex;
-    }
-    section#inicio h2{
-      font-size: 3.5rem;
-    }
-    section#inicio span#subtitle{
-      margin-right: 0;
-      font-size: 1rem;
-    }
-    #main{
-      margin-left: 0;
-    }
+  #header {
+    left: -300px;
+  }
+
+  i.menu-mobile {
+    display: flex;
+  }
+
+  section#inicio h2 {
+    font-size: 3.5rem;
+  }
+
+  section#inicio span#subtitle {
+    margin-right: 0;
+    font-size: 1rem;
+  }
+
+  #main {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -209,4 +215,22 @@ i.menu-mobile:hover {
   #main {
     margin-left: 0 !important;
   }
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  width: 12px;
+  box-shadow: inset 0 0 3.rem #00000050;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #1e1e2f;
+}
+
+.scetion-bg{
+  background-color: #eff5ff;
 }

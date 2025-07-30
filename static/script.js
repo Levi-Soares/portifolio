@@ -1,5 +1,4 @@
-/*Menu mobile: Abrir e fechar barra lateral*/
-
+/* Menu mobile: Abrir e fechar barra lateral */
 const menuMobile = document.querySelector('.menu-mobile');
 const body = document.querySelector('body');
 
@@ -14,3 +13,38 @@ menuMobile.addEventListener('click', () => {
     menuMobile.classList.replace('bi-x', 'bi-list');
   }
 });
+
+/* Rolagem suave para âncoras */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    // Fecha o menu mobile se estiver aberto
+    if (body.classList.contains('menu-nav-active')) {
+      body.classList.remove('menu-nav-active');
+      menuMobile.classList.replace('bi-x', 'bi-list');
+    }
+    
+    // Rolagem suave
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+/*Fechar o menu quando selecionar algum topico e mudar o icone para list*/
+
+const navItem = document.querySelector('nav-item')
+
+navItem.forEach(item => {
+    item.addEventListener("click", () =>{
+        if(body.classList.contains("menu-nav-active")) {
+            body.classList.remove("menu-nav-active")
+            menuMobile.classList.replace("bi-x", "bi-list");
+        }
+    })
+})
