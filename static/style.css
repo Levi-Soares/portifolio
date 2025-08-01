@@ -160,6 +160,7 @@ i.menu-mobile {
   transition: background-color 0.3s ease;
 }
 
+
 i.menu-mobile:hover {
   background-color: #1e1e2f;
 }
@@ -212,6 +213,11 @@ i.menu-mobile:hover {
     bottom: 0;
     width: 300px;
     z-index: 9998;
+    
+  }
+
+  i.menu-mobile {
+    display: flex !important;
   }
 
   body.menu-nav-active #header {
@@ -359,4 +365,32 @@ i.menu-mobile:hover {
 
 #btn-enviar-loader{
   display: none;
+}
+
+#footer{
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 9999;
+  background-color: /* #021124 */  #1e1e2f;
+  transition: .3s;
+}
+
+@media (max-width: 1012px) {
+  #footer{
+    position: static;
+    width: auto;
+    padding: 20px 15px;
+  }
+}
+
+/* Esconde o botão "Arraste para mais" em telas menores que 768px (dispositivos móveis) */
+@media (max-width: 767.98px) {
+    #arraste {
+        display: none !important;
+    }
 }

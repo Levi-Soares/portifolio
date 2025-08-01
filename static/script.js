@@ -68,7 +68,7 @@ const animeScroll = () => {
 animeScroll();
 window.addEventListener("scroll", animeScroll); */
 
-// Atualize seu JavaScript para:
+/* Atualize seu JavaScript para: //
 function animeScroll() {
   const windowTop = window.scrollY + (window.innerHeight * 0.85);
   const elements = document.querySelectorAll('[data-anime]:not(.animated)');
@@ -78,7 +78,7 @@ function animeScroll() {
       element.classList.add('animated');
     }
   });
-}
+} */
 
 // Inicialização
 window.addEventListener('load', () => {
@@ -87,3 +87,53 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('scroll', animeScroll);
+
+/* Ativar carregamento no botão de enviar formulario
+
+const btnEnviar = document.querySelector('#btn-enviar')
+const btnEnviarLoader = document.querySelector('#btn-enviar-loader')
+
+btnEnviar.addEventListener("click", ()=>{
+  btnEnviarLoader.style.display = "block";
+  btnEnviar.style.display = "none"
+}) */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verifica parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Para sucesso
+    if(urlParams.has('success')) {
+        Swal.fire({
+            title: 'Sucesso!',
+            text: 'Mensagem enviada com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Limpa a URL sem recarregar
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+    
+    // Para erro
+    if(urlParams.has('error')) {
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Limpa a URL sem recarregar
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+
+    // Formulário de contato
+    const formContato = document.getElementById('form-contato');
+    if(formContato) {
+        formContato.addEventListener('submit', function(e) {
+            // Não precisa prevenir o comportamento padrão
+            // O envio tradicional já está funcionando
+        });
+    }
+});

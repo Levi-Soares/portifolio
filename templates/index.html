@@ -17,6 +17,15 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 
     <title>Portifólio</title>
 </head>
@@ -467,7 +476,7 @@
                         <div class="card p-5 shadow border-0">
                             <div class="endereco">
                                 <h4><i class="bi bi-geo-alt"></i>Localização:</h4>
-                                <p>Fortaleza, Ce</p>
+                                <p>Fortaleza, CE</p>
                             </div>
 
                             <div class="email">
@@ -486,7 +495,7 @@
                     <div class="col-md-7 mt-3 mt-md-0">
                         <div class="card p-5 h-100 shadow border-0">
 
-                            <form class="row g-3">
+                            <form id="form-contato" class="row g-3" action="{{ url_for('send') }}" method="POST">
                                 <div class="col-md-6">
                                     <label for="nome" class="form-label">Nome</label>
                                     <input type="text" class="form-control" id="nome" name='nome'
@@ -506,15 +515,10 @@
                                 </div>
 
                                 <div class="col-12 d-flex justify-content-center mt-4">
-                                    <button id= 'btn-enviar' type="submit" class="btn btn-outline-primary">Enviar mensagem</button>
-                                    
-                                    <button id='btn-enviar-loader' class="btn btn-primary" type="button" disabled>
-                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                                        <span role="status">Enviando...</span>
-                                    </button>
+                                    <button id='btn-enviar' type="submit" class="btn btn-primary">Enviar
+                                        mensagem</button>
+
                                 </div>
-
-
 
                             </form>
 
@@ -531,6 +535,15 @@
 
 
     </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                &copy; Copyright <strong>Levi Soares</strong>
+                
+            </div>
+        </div>
+    </footer>
 
 
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.js') }}"></script>
