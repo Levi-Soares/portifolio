@@ -90,7 +90,7 @@
                 <div id="arraste" class="d-flex align-items-center">
                     <i class="bi bi-arrow-down text-white pe-2 fs-2" aria-hidden="true"></i>
                     <a href="#sobre">Arraste para mais</a>
-                </div> 
+                </div>
 
 
             </div>
@@ -99,7 +99,7 @@
 
         <section class="container mt-5" id='sobre'>
             <div class="row w-100">
-                <div class="col-md-12"> 
+                <div class="col-md-12">
                     <h2 class='pt-3'>Sobre</h2>
                     <p>Profissional com mais de 5 anos de experiência em infraestrutura de TI, suporte a sistemas e
                         desenvolvimento de aplicações. Atuação sólida em ambientes hospitalares e corporativos, com
@@ -490,24 +490,32 @@
                                 <div class="col-md-6">
                                     <label for="nome" class="form-label">Nome</label>
                                     <input type="text" class="form-control" id="nome" name='nome'
-                                        placeholder='Digite seu nome'>
+                                        placeholder='Digite seu nome' required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name='email'
-                                        placeholder='Digite seu email'>
+                                        placeholder='Digite seu email' required>
                                 </div>
 
                                 <div class="col-12">
                                     <label for="mensagem" class="form-label">Mensagem: </label>
                                     <textarea type="text" class="form-control" id="mensagem" name='mensagem' rows="10"
-                                        placeholder="Digite sua mensagem"></textarea>
+                                        placeholder="Digite sua mensagem" required></textarea>
                                 </div>
 
                                 <div class="col-12 d-flex justify-content-center mt-4">
-                                    <button type="submit" class="btn btn-outline-primary">Enviar mensagem</button>
+                                    <button id= 'btn-enviar' type="submit" class="btn btn-outline-primary">Enviar mensagem</button>
+                                    
+                                    <button id='btn-enviar-loader' class="btn btn-primary" type="button" disabled>
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <span role="status">Enviando...</span>
+                                    </button>
                                 </div>
+
+
+
                             </form>
 
                         </div>

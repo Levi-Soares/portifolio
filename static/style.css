@@ -356,3 +356,7 @@ i.menu-mobile:hover {
 }
 
 */
+
+#btn-enviar-loader{
+  display: none;
+}
