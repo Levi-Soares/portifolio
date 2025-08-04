@@ -29,6 +29,40 @@
 
     <title>Portifólio</title>
 </head>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  function getParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(param);
+  }
+
+  window.onload = function () {
+    const success = getParam('success');
+    const error = getParam('error');
+
+    if (success) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Mensagem enviada com sucesso. Obrigado.',
+        showConfirmButton: false,
+        timer: 2500
+      });
+      window.history.replaceState({}, document.title, "/");
+    }
+
+    if (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro ao enviar mensagem!',
+        text: 'Tente novamente mais tarde.',
+        showConfirmButton: true
+      });
+      window.history.replaceState({}, document.title, "/");
+    }
+  }
+</script>
 
 <body>
 
@@ -183,21 +217,19 @@
                                 </li>
 
                             </ul>
-                            <section class="vh-100 d-flex align-items-center justify-content-center section-bg"
-                                id="Sobre">
-                                <div class="container pb-5">
 
-                                </div>
-                            </section>
 
                         </div>
-                    </div>
+        </section>
+
+        </div>
+        </div>
 
 
 
 
 
-                </div>
+        </div>
 
 
 
@@ -206,7 +238,7 @@
 
         <section class="mt-5 section-bg" id="Habilidades">
             <div class="container pb-5">
-                <h2 class='pt-5'>Habilidades</h2>
+                <h2 class=''>Habilidades</h2>
                 <p>Em toda essa jornada profissional na tecnologia, eu adquiri algumas habilidades técnicas e não
                     técnicas,
                     a maioria delas estão aqui, de acordo com a porcentagem de conhecimento que eu acredito ter em cada
@@ -215,90 +247,101 @@
 
                 <div class="row">
 
-                    <div class="col-md-6">
-                        <h3 class="mt-4 mb-3">Habilidades Técnicas</h3>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="mb-4">Habilidades Técnicas</h3>
 
-                        <p class='mt-3 mb-0'>Infraestrutura</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 75%">75%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Telefonia IP</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="66"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 66%">66%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Linguagens</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="45"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 45%">45%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>DevOps</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="36"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 36%">36%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Banco de dados</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="21"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 21%">21%</div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <h3 class="mt-4 mb-3">Soft Skills</h3>
-
-                        <p class='mt-3 mb-0'>Adaptabilidade</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="90"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 90%">90%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Trabalho em equipe</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="87"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 87%">87%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Comunicação</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 80%">80%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Resolução de problemas</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="76"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 76%">76%</div>
-                        </div>
-
-                        <p class='mt-3 mb-0'>Gestão de tempo</p>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="70"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-secondary" style="width: 70%">70%</div>
-                        </div>
-                        <section class="vh-100 d-flex align-items-center justify-content-center section-bg"
-                            id="Habilidades">
-                            <div class="container pb-5">
-
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Infraestrutura</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 75%">75%</div>
+                                </div>
                             </div>
-                        </section>
 
-                    </div>
-                </div>
-            </div>
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Telefonia IP</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 66%">66%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Linguagens</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 45%">45%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">DevOps</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 36%">36%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Banco de dados</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 21%">21%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <h3 class="mb-4">Soft Skills</h3>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Adaptabilidade</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 90%">90%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Trabalho em equipe</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 87%">87%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Comunicação</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 80%">80%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Resolicação de problemas</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 76%">76%</div>
+                                </div>
+                            </div>
+
+                            <div class="grafico mb-2">
+                                <p class="mb-1">Gestão de tempo</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" style="width: 70%">70%</div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
         </section>
 
-        <section class="mt-5 cv" id="curriculo">
+        </div>
+        </div>
+        </div>
+        </section>
+
+        <section class="mt-5 cv pt-5 pb-5 section-bg" id="curriculo">
 
             <div class="container pb-5">
                 <h2 class="pt-3 pb-4">Currículo</h2>
 
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-md-6">
                         <h3>Educação</h3>
 
@@ -451,12 +494,12 @@
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortifolio"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselPortifolio"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Próximo</span>
+                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
