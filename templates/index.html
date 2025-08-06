@@ -33,35 +33,35 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-  function getParam(param) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(param);
-  }
-
-  window.onload = function () {
-    const success = getParam('success');
-    const error = getParam('error');
-
-    if (success) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Mensagem enviada com sucesso. Obrigado.',
-        showConfirmButton: false,
-        timer: 2500
-      });
-      window.history.replaceState({}, document.title, "/");
+    function getParam(param) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(param);
     }
 
-    if (error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Erro ao enviar mensagem!',
-        text: 'Tente novamente mais tarde.',
-        showConfirmButton: true
-      });
-      window.history.replaceState({}, document.title, "/");
+    window.onload = function () {
+        const success = getParam('success');
+        const error = getParam('error');
+
+        if (success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Mensagem enviada com sucesso. Obrigado.',
+                showConfirmButton: false,
+                timer: 2500
+            });
+            window.history.replaceState({}, document.title, "/");
+        }
+
+        if (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao enviar mensagem!',
+                text: 'Tente novamente mais tarde.',
+                showConfirmButton: true
+            });
+            window.history.replaceState({}, document.title, "/");
+        }
     }
-  }
 </script>
 
 <body>
@@ -128,7 +128,7 @@
                     Desenvolvedor </span>
 
             </div>
-
+            
             <div class="col-md-7 d-flex justify-content-end align-items-end">
                 <div id="arraste" class="d-flex align-items-center">
                     <i class="bi bi-arrow-down text-white pe-2 fs-2" aria-hidden="true"></i>
@@ -312,7 +312,7 @@
                             </div>
 
                             <div class="grafico mb-2">
-                                <p class="mb-1">Resolicação de problemas</p>
+                                <p class="mb-1">Resolução de problemas</p>
                                 <div class="progress">
                                     <div class="progress-bar bg-secondary" style="width: 76%">76%</div>
                                 </div>
